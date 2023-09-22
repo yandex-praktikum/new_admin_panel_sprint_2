@@ -1,6 +1,11 @@
 version: '3'
 services:
   service:
+    # Если вы работаете на MacOS c процессором ARM, то в случае возникновения проблем при сборке образа,
+    # связанных с установкой uwsgi, необходимо явно указать платформу скачиваемого образа.
+    # https://docs.docker.com/build/building/multi-platform/
+    # Раскомментируйте следующую строку.
+    # platform: linux/amd64
     build: app
     expose:
       - "8000"
